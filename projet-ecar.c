@@ -70,7 +70,7 @@ int main(void)
     scanf("%d",&reponse);
     while (reponse != 0 && reponse != 1)
     {
-    printf("Reponse invalide. Veuillez réessayer : ");
+    printf("Reponse invalide. Veuillez reessayer : ");
     scanf("%d",&reponse);
     }
 
@@ -169,6 +169,7 @@ void ajouter_voiture()
     printf("Entrez l'etat de la voiture : \n",voitures[Lvoitures].etat);
     scanf("%d", &voitures[Lvoitures].etat);
     Lvoitures++;
+    printf("Voiture ajoutee avec succees");
 }
 
 
@@ -177,6 +178,7 @@ void location_voiture()
     char msg[100];
     char nom[20];
     char date[10];
+    int l=-1;
     int identif_voiture;
     printf("Entrez l'identifiant de la voiture que vous souhaitez louer : ");
     scanf("%d", &identif_voiture);
@@ -198,6 +200,7 @@ void location_voiture()
                 historique[Lhistorique].identifiant_location=Lhistorique;
                 printf("Location reussite, votre identifiant de location est %d . Bienvenue!", Lhistorique);
                 Lhistorique++;
+                l++;
                 break;
             }
             else if( voitures[i].disponibilite==0)
@@ -210,7 +213,8 @@ void location_voiture()
            strcpy(msg,"Identif de voiture invalide.\n");
         }
     }
-    printf("%s",msg);
+    if (l==-1)
+        printf("%s",msg);
 }
 
 void description_voiture()
@@ -235,7 +239,7 @@ void description_voiture()
             printf("Kilometrage : %d ", voitures[i].kilometrage);
             printf("klm. \n");
             printf("Nombres de chevaux : %d \n", voitures[i].nb_chevaux);
-            printf("Prix de location par jour : %d \n", voitures[i].prix_location_jour);
+            printf("Prix de location par jour : %d ", voitures[i].prix_location_jour);
             printf("dt. \n");
             j=0;
             break ;
@@ -285,13 +289,13 @@ void modifier_description_etat()
                 printf("3. Couleur \n");
                 printf("4. Date de fabrication \n");
                 printf("5. Energie \n");
-                printf("6. Kilométrage \n");
+                printf("6. KilomÃ©trage \n");
                 printf("7. Nombres de chevaux \n");
                 printf("8. Prix de location par jour \n");
-                printf("9. Disponibilité \n");
+                printf("9. DisponibilitÃ© \n");
                 printf("10. Etat \n");
                 printf("11. Sortie du programme \n");
-                printf("Entrez le numéro de description que vous desirez modifier : \n");
+                printf("Entrez le numÃ©ro de description que vous desirez modifier : \n");
                 scanf("%d", &choix2);
 
             switch (choix2) {
@@ -328,7 +332,7 @@ void modifier_description_etat()
                 scanf("%d", &voitures[i].prix_location_jour);
                 break;
             case 9:
-                printf("Entrez la nouvelle disponibilite de la voiture (Disponible=1/Louée=0) : ");
+                printf("Entrez la nouvelle disponibilite de la voiture (Disponible=1/LouÃ©e=0) : ");
                 scanf("%d", &voitures[i].disponibilite);
                 break;
             case 10:
@@ -445,11 +449,11 @@ void inscription_loueur()
     scanf("%s", loueurs[iL].nom_utilisateur);
     printf("Entrez un mot de passe (sans des espaces): \n");
     scanf("%s", loueurs[iL].mot_de_passe);
-    printf("Entrez votre numéro de téléphone : \n");
+    printf("Entrez votre numero de telephone : \n");
     scanf("%s", loueurs[iL].Num_tell);
     printf("Entrez votre adresse : \n");
     scanf("%s", loueurs[iL].adresse);
-    printf("Inscription réussie. Bienvenue, %s! \n",loueurs[iL].nom_prenom);
+    printf("Inscription reussie. Bienvenue, %s! \n",loueurs[iL].nom_prenom);
     iL++;
 }
 
