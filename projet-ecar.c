@@ -164,9 +164,9 @@ void ajouter_voiture()
     scanf("%d", &voitures[Lvoitures].nb_chevaux);
     printf("Entrez le prix de location par jour de la voiture : \n",voitures[Lvoitures].prix_location_jour);
     scanf("%d", &voitures[Lvoitures].prix_location_jour);
-    printf("Entrez la disponibilite de la voiture : \n",voitures[Lvoitures].disponibilite);
+    printf("Entrez la disponibilite de la voiture (Disponible=1/Louée=0): \n",voitures[Lvoitures].disponibilite);
     scanf("%d", &voitures[Lvoitures].disponibilite);
-    printf("Entrez l'etat de la voiture : \n",voitures[Lvoitures].etat);
+    printf("Entrez l'etat de la voiture (en marche=1/en panne=0): \n",voitures[Lvoitures].etat);
     scanf("%d", &voitures[Lvoitures].etat);
     Lvoitures++;
     printf("Voiture ajoutee avec succees");
