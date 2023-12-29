@@ -1,4 +1,4 @@
-L'application E-car est un système de gestion de location de voitures qui offre une gamme complète de fonctionnalités :
+E-Cars est une simple application cmd de location des voitures écrite en langage C qui offre une gamme complète de fonctionnalités :
 
 1* Création d'un compte et Inscription : 
  Les loueurs peuvent créer un compte en fournissant des informations telles que leur nom, nom d'utilisateur, mot de passe, numéro de téléphone et adresse.
